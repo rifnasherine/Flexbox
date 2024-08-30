@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Haven</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        header {
+            background: RGB(255, 111, 97) ;
+            color: #f9f9f9;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        header nav ul li a {
+            color: #f9f9f9;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: RGB(255, 111, 97);
+        }
+
+        .hero {
+            background: url(images/TECHHAVEN.png) no-repeat center center / cover;
+
+            color: #f9f5f5;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero .cta {
+            padding: 10px 20px;
+            background: RGB(255, 111, 97);
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .services, .blog-section, .branches {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #fff;
+            flex-wrap: wrap;
+        }
+
+        .service-item, .blog-item, .branch-item {
+            background-color: RGB(7,40,67);
+            padding: 20px;
+            flex-basis: 30%;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Image size adjustments */
+        .service-item img {
+            width: 100%; /* Adjust to fit the container */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 450px; /* Max width for the largest images */
+            max-height: 400px; /* Max height for the largest images */
+        }
+
+        .blog-item img {
+            width: 100%;
+            height: auto;
+            max-width: 450px; /* Adjust based on your preference */
+            max-height: 400px; /* Adjust based on your preference */
+        }
+
+        .branch-item img {
+            width: 100%;
+            height: auto;
+            max-width: 300px; /* Adjust based on your preference */
+            max-height: 200px; /* Adjust based on your preference */
+        }
+
+        .service-item h3, .blog-item h3, .branch-item h3 {
+            color:RGB(255, 111, 97);
+            margin-bottom: 10px;
+        }
+
+        .service-item p, .blog-item p, .branch-item p {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .service-item .cta, .blog-item .cta, .branch-item .cta {
+            background-color: RGB(255, 111, 97);
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .service-item:hover, .blog-item:hover, .branch-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .call-to-action {
+            background-color: RGB(255, 111, 97);
+            color: #333;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .call-to-action h2 {
+            margin-bottom: 10px;
+        }
+
+        .call-to-action a {
+            color: #333;
+            padding: 10px 20px;
+            background: #f9f9f9;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #333;
+            color: #f9f9f9;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer .footer-columns {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        footer .footer-column {
+            flex-basis: 30%;
+            margin: 10px;
+            text-align: left;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+            color: RGB(255, 111, 97);
+        }
+
+        footer p, footer a {
+            color: #f9f9f9;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .service-item, .blog-item, .branch-item, .footer-column {
+                flex-basis: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                
+                font-size: 2rem;
+            }
+
+            .hero p {
+               
+                font-size: 1.2rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Haven</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gadget">Gadgets</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+                <li><a href="#aboutus">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div>
+          
+            <h1>Welcome to Tech Haven!</h1>
+            <p>Your ultimate destination for the latest mobile devices and accessories</p>
+          
+        </div>
+    </section>
+
+    <section class="services" id="gadget">
+        <div class="service-item" >
+            <img src="images/smartphone.jpg" alt="Smartphones">
+            <h3>Latest Smartphones</h3>
+            <p>Explore our collection of the latest smartphones from top brands, designed to meet your everyday needs and keep you connected.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+        <div class="service-item">
+            <img src="images/watch.jpg" alt="Accessories">
+            <h3>Smartwatches</h3>
+            <p>
+                Discover our diverse range of smartwatches, blending style with cutting-edge technology. Stay connected, track your fitness, and elevate your everyday look.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+        <div class="service-item">
+            <img src="images/earphone.jpg" alt="Gadgets">
+            <h3>Wireless Earphones</h3>
+            <p>
+                Explore our extensive collection of wireless earphones from top brands. Enjoy superior sound quality, comfort, and style to elevate your listening experience.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+        <div class="service-item">
+            <img src="images/laptop.jpg" alt="Smartphones">
+            <h3>Top branded Laptops</h3>
+            <p>Explore our curated collection of top-brand laptops. From performance powerhouses to ultra-portable designs, find the perfect match for your needs.</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+
+        <div class="service-item">
+            <img src="images/speaker.jpg" alt="Smartphones">
+            <h3>Bluetooth speakers</h3>
+            <p>Discover our collection of Bluetooth speakers, delivering powerful sound in a portable design. Perfect for any occasion, enjoy music wherever you go!</p>
+            <a href="#" class="cta">View More</a>
+        </div>
+    </section>
+    <h1 align="center" id="accessories">MUST-HAVE ACCESSORIES</h1>
+    <p align="center">Discover the must-have accessories that every smartphone user should consider to enhance their device experience</p>
+    <section class="blog-section">
+        <div class="blog-item">
+            <img src="images/cases.jpg" alt="Top 5 Smartphones">
+            <h3>Mobile Cases</h3>
+            <p>Protect your phone in style with our premium mobile cases.Upgrade your phone's look today!</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+        <div class="blog-item">
+            <img src="images/laptopskin.webp" alt="Must-Have Accessories">
+            <h3>Laptop Skins</h3>
+            <p>Personalize your laptop with our stylish, durable skins. Easy to apply, they prevent scratches while adding flair.</p>
+            <a href="#" class="cta">Read More</a>
+        </div>
+    </section>
+
+    
+
+    <section class="call-to-action">
+        <h2>Join Our Community!</h2>
+        <p>Stay updated with our latest offers and news.</p><br>
+        <a href="#">Subscribe Now</a>
+    </section>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3 id="aboutus">About Us</h3>
+                <p>Tech Haven is your go-to store for all things tech. We provide the latest devices and accessories to keep you connected.</p>
+            </div>
+            <div class="footer-column" id="contact">
+                <h3>Customer Service</h3>
+                <p><a href="#">Contact Us</a></p>
+                <p><a href="#">Returns</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">Instagram</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
